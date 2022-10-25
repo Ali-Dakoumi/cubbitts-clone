@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+slices
 
 # testing
 /coverage
@@ -37,4 +38,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-slices

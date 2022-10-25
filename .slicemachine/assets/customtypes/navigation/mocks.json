@@ -1,16 +1,42 @@
 {
-  "id": "09ffe7b8-7585-4f2a-bc34-3b3223a8525d",
-  "uid": "est-voluptas-animi",
+  "id": "91725e73-0c0d-4a3d-a9d9-db33cf1ff70a",
+  "uid": "dolores-aut-aliquam",
   "type": "navigation",
   "data": {
-    "logo": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
+    "homepageLabel": [
+      {
+        "type": "heading3",
+        "text": "Enable intuitive channels",
+        "spans": []
+      }
+    ],
+    "links": [
+      {
+        "label": [
+          {
+            "type": "heading3",
+            "text": "Implement interactive portals",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
       },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&h=500&fit=crop"
-    }
+      {
+        "label": [
+          {
+            "type": "heading3",
+            "text": "Optimize innovative eyeballs",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ]
   }
 }
