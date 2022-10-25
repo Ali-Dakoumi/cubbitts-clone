@@ -1,0 +1,108 @@
+{
+  "id": "product",
+  "label": "product",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,list-item"
+        }
+      },
+      "category": {
+        "type": "Link",
+        "config": {
+          "label": "Category",
+          "select": "document",
+          "customtypes": [
+            "category"
+          ]
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "hover": {
+        "type": "Image",
+        "config": {
+          "label": "Hover",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "price": {
+        "type": "Number",
+        "config": {
+          "label": "Price",
+          "placeholder": ""
+        }
+      },
+      "material": {
+        "type": "Select",
+        "config": {
+          "label": "Material",
+          "placeholder": "",
+          "options": [
+            "steel",
+            "titanium"
+          ]
+        }
+      },
+      "facewidth": {
+        "type": "Select",
+        "config": {
+          "label": "Face Width",
+          "placeholder": "",
+          "options": [
+            "wide",
+            "narrow"
+          ]
+        }
+      },
+      "shape": {
+        "type": "Select",
+        "config": {
+          "label": "Shape",
+          "placeholder": "",
+          "options": [
+            "square",
+            "round",
+            "aviator",
+            "rectangle"
+          ]
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

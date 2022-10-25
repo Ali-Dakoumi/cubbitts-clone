@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@layer base {
+  :root {
+    --primary-color: #f5f5f3;
+    --footer-color: #e1e1e1;
+    --button-light: #d4d4d4;
+    --light-hover: #bfbfbf;
+    --button-dark: #373737;
+    --dark-hover: #242424;
+    --color-border: #c6c6c6;
+    --color-brand: #242424;
+    --body-light: #787878;
+    --gray-light: #737373;
+
+    /* ... */
+  }
+
+  html {
+    background: var(--primary-color);
+    font-family: "Exo 2", sans-serif;
+  }
+  body {
+    width: 100%;
+  }
+  a {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  span {
+    color: var(--color-brand);
+  }
+  footer > * {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .links {
+    pointer-events: none;
+  }
+  .links > a,
+  .links > button {
+    pointer-events: auto;
+  }
+  .links:hover > a:not(:hover),
+  .links:hover > button:not(:hover) {
+    opacity: 0.5;
+    will-change: opacity;
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+  /* #img-one:hover #img-hover {
+    background: black;
+    transition: display 0.5s ease;
+  } */
+  #article-hover:hover #article-hover {
+    display: none;
+    opacity: 0;
+  }
+  .nav-width {
+    width: calc(100% - 50px);
+  }
+  .gridrow-minmax {
+    grid-template-rows: auto minmax(100px, 1fr);
+  }
+  .fz-13 {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .fz-15 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+  .fz3-15 {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 21px;
+  }
+  .fz-23 {
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 30px;
+  }
+  .fz-30 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .fz-38 {
+    font-size: 38px;
+    line-height: 44px;
+  }
+  .fz-60 {
+    font-size: 60px;
+    line-height: 72px;
+  }
+  .fz-80 {
+    font-size: 80px;
+    line-height: 92px;
+  }
+  .fz-35 {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+  .border-s {
+    border-spacing: 25px;
+  }
+  .article {
+    aspect-ratio: 1 / 1;
+  }
+  .article img {
+    aspect-ratio: 1 / 1;
+  }
+  .grid-span2 {
+    grid-column: 2 / span 2;
+  }
+  .cart-row {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+  .method-grid {
+    display: grid;
+    grid-template-columns: 20px 1fr 50px;
+  }
+}
+
+@layer components {
+  .line {
+    @apply after:content-[''] after:absolute after:bottom-[-1px] after:block after:left-0  after:w-full after:z-10 after:border-b-[1px] after:border-solid after:border-[#c6c6c6];
+  }
+  .borderb {
+    @apply border-b-[1px] border-solid border-[#c6c6c6];
+  }
+  .bordert {
+    @apply border-t-[1px] border-solid border-[#c6c6c6];
+  }
+  .scale-img {
+    @apply hover:scale-[1.03] transition-transform duration-200 ease-in-out cursor-pointer;
+  }
+}

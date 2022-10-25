@@ -1,0 +1,89 @@
+{
+  "id": "featured_products",
+  "type": "SharedSlice",
+  "name": "FeaturedProducts",
+  "description": "FeaturedProducts",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "FeaturedProducts",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your feature"
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "buttonlabel": {
+          "type": "Text",
+          "config": {
+            "label": "Buttonlabel",
+            "placeholder": ""
+          }
+        },
+        "buttonlink": {
+          "type": "Link",
+          "config": {
+            "label": "Buttonlink",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "product": {
+          "type": "Link",
+          "config": {
+            "label": "Product",
+            "select": "document",
+            "customtypes": [
+              "product"
+            ]
+          }
+        },
+        "product2": {
+          "type": "Link",
+          "config": {
+            "label": "Product2",
+            "select": "document"
+          }
+        },
+        "product3": {
+          "type": "Link",
+          "config": {
+            "label": "Product3",
+            "select": "document"
+          }
+        },
+        "product4": {
+          "type": "Link",
+          "config": {
+            "label": "Product4",
+            "select": "document"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
