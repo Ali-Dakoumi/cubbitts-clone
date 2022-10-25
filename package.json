@@ -1,6 +1,9 @@
 {
+  "homepage": "https://Ali-Dakoumi.github.com/cubbitts-clone",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -23,6 +26,7 @@
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "slice-machine-ui": "^0.4.0",
     "tailwindcss": "^3.1.2"
