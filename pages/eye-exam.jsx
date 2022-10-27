@@ -49,7 +49,7 @@ const eyeexam = ({ document }) => {
               justify-self-center md:justify-self-start lg:justify-self-start xl:justify-self-start 2xl:justify-self-start
               md:max-w-[75%] lg:max-w-[75%] xl:max-w-[75%] 2xl:max-w-[75%] 
               md:px-0 lg:px-0 xl:px-0 2xl:px-0
-              text-center md:text-left lg:text-left xl:text-left 2xl:text-left
+              text-center md:text-left lg:text-left xl:text-left 2xl:text-left text-lg
               "
               >
                 Comprehensive eye examinations are available at all of our

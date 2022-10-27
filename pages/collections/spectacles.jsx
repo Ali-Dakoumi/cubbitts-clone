@@ -1,18 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useContext, useEffect, useState } from "react";
 import { createClient } from "../../prismicio";
 import prismic from "../../prismicio";
-import { VscHeart } from "react-icons/vsc";
-import { RiHeartFill } from "react-icons/ri";
-import { useRouter } from "next/router";
 import { FavContext } from "../_app";
-import Product from "../../components/Product";
 import Try from "../../components/Try";
 import Filter from "../../components/Filter";
 import Skeleton from "../../components/Skeleton";
 import FilterSkeleton from "../../components/FilterSkeleton";
-
+import Product from "../../components/Product";
 const spectacles = ({ products }) => {
   const fav = useContext(FavContext);
   const { addFavProduct, favourites, setFavourites } = fav;
@@ -47,7 +41,7 @@ const spectacles = ({ products }) => {
           </div>
         </div>
         {loading === null && <FilterSkeleton />}
-        {loading !== null && <Filter />}
+        {!loading && <Filter />}
         {
           <div className="">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-x-3 gap-y-7">
@@ -57,6 +51,7 @@ const spectacles = ({ products }) => {
                     <Skeleton />
                   </div>
                 ))}
+              {/* <Suspense fallback={``}> */}
               {loading !== null &&
                 products.map((product, i) => (
                   <>
@@ -68,6 +63,7 @@ const spectacles = ({ products }) => {
                     />
                   </>
                 ))}
+              {/* </Suspense> */}
             </div>
           </div>
         }

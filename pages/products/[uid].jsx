@@ -1,10 +1,8 @@
 import Head from "next/head";
 import { createClient } from "../../prismicio";
-import prismic from "../../prismicio";
 import { VscHeart } from "react-icons/vsc";
 import { IoHelpCircleOutline } from "react-icons/io5";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import Link from "next/link";
 import { CartContext, FavContext } from "../_app";
 import { useContext } from "react";
 import { RiHeartFill } from "react-icons/ri";
@@ -16,17 +14,10 @@ const product = ({ product, document, products }) => {
   const { favourites, addFavProduct } = fav;
   const { slices } = document.data;
   const myproducts = slices.map((slice) => slice?.items);
-  // const sielproduit = myproducts[0][0].product;
-  // const sielproduit2 = myproducts[0][0].product2;
-  // const sielproduit3 = myproducts[0][0].product3;
-  // const sielproduit4 = myproducts[0][0].product4;
   const cartItems = useContext(CartContext);
   const { items, setItems, cartClose, setCartClose } = cartItems;
-  console.log(items, "from uid");
-  // const products = [sielproduit, sielproduit2, sielproduit3, sielproduit4];
   const {
     id,
-    uid,
     data: { title, price, image, hover, description },
   } = product;
   const item = {
@@ -189,7 +180,6 @@ const product = ({ product, document, products }) => {
           </div>
         </div>
       </section>
-      {/* promises */}
       <section className="pb-16 px-[25px] grid gap-x-3 gap-y-7 grid-cols-1 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 py-5 borderb ">
         <div className="col-span-1 row-span-2">
           <h1 className="sm:pb-10 fz-15 md:fz-38 xl:fz-38 2xl:fz-38 sticky top-16 ">
@@ -265,12 +255,9 @@ export async function getStaticProps({ previewData, params }) {
 
   function shuffleArray(array) {
     let curId = array.length;
-    // There remain elements to shuffle
     while (0 !== curId) {
-      // Pick a remaining element
       let randId = Math.floor(Math.random() * curId);
       curId -= 1;
-      // Swap it with the current element.
       let tmp = array[curId];
       array[curId] = array[randId];
       array[randId] = tmp;

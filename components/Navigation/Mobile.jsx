@@ -18,8 +18,8 @@ const Mobile = ({ toggleWishlist, logo, favourites, toggleCart }) => {
     setClose(!close);
   };
   return (
-    <div className="md:hidden lg:hidden xl:hidden 2xl:hidden grid items-center">
-      <div className="justify-self-start col-start-1 row-start-1">
+    <div className="md:hidden lg:hidden xl:hidden 2xl:hidden grid items-center ">
+      <div className="justify-self-start col-start-1 row-start-1 z-20">
         <button
           onClick={toggleMenu}
           className={`z-20   ${close ? "" : "hidden"}  `}
@@ -35,40 +35,51 @@ const Mobile = ({ toggleWishlist, logo, favourites, toggleCart }) => {
       </div>
       <div
         ref={menu}
-        className="fixed top-0 left-0 right-0 bottom-0 z-10 pt-14 max-w-[500px] w-screen translate-x-[-100%] transition-transform duration-200
-          "
+        className="fixed top-0 left-0 right-0 bottom-0 z-10 pt-14 max-w-[96%] w-screen translate-x-[-100%] transition-transform duration-200  "
       >
-        <div className="flex flex-col h-screen bg-[#f5f5f3] pl-3">
+        <div className="flex flex-col h-screen bg-[#f5f5f3] pl-[25px]">
           <Link href={"/collections/spectacles"}>
-            <a className="pr-3 py-3 text-color-brand relative ">
+            <a
+              onClick={toggleMenu}
+              className=" py-3 text-color-brand relative "
+            >
               <div className="flex justify-between w-full">
                 <span>Spectcles</span> <MdKeyboardArrowRight />
               </div>
             </a>
           </Link>
           <Link href={"/collections/sunglasses"}>
-            <a className="pr-3 py-3 text-color-brand relative ">
+            <a
+              onClick={toggleMenu}
+              className=" py-3 text-color-brand relative "
+            >
               <div className="flex justify-between w-full">
                 <span>sunglasses</span> <MdKeyboardArrowRight />
               </div>
             </a>
           </Link>
           <Link href={"/collections/accessories"}>
-            <a className="pr-3 py-3 text-color-brand relative ">
+            <a className=" py-3 text-color-brand relative ">
               <div className="flex justify-between w-full">
                 <span>Accessories</span> <MdKeyboardArrowRight />
               </div>
             </a>
           </Link>
           <Link href={"/eye-exam"}>
-            <a className="pr-3 py-3 text-color-brand relative ">
+            <a
+              onClick={toggleMenu}
+              className=" py-3 text-color-brand relative "
+            >
               <div className="flex justify-between w-full">
                 <span>Eye Exam</span> <MdKeyboardArrowRight />
               </div>
             </a>
           </Link>
           <Link href={"/wishlist"}>
-            <a className="pr-3 py-3 text-color-brand relative ">
+            <a
+              onClick={toggleMenu}
+              className=" py-3 text-color-brand relative "
+            >
               <div className="flex justify-between w-full">
                 <span>Wishlist</span>
               </div>

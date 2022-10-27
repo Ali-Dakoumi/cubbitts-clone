@@ -1,17 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useContext, useEffect, useState } from "react";
 import { createClient } from "../../prismicio";
 import prismic from "../../prismicio";
-import { VscHeart } from "react-icons/vsc";
-import { RiHeartFill } from "react-icons/ri";
-import { useRouter } from "next/router";
 import { FavContext } from "../_app";
-import Product from "../../components/Product";
 import Try from "../../components/Try";
 import Filter from "../../components/Filter";
 import Skeleton from "../../components/Skeleton";
 import FilterSkeleton from "../../components/FilterSkeleton";
+import Product from "../../components/Product";
 
 const sunglasses = ({ products }) => {
   const fav = useContext(FavContext);

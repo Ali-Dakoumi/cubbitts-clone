@@ -1,8 +1,7 @@
 import emailjs from "emailjs-com";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../../pages/_app";
-import Router from "next/router";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const Confirmation = ({ current, setCurrent, array, user }) => {
@@ -70,8 +69,8 @@ const Confirmation = ({ current, setCurrent, array, user }) => {
     );
   }
   return (
-    <div className="mt-10 ml-[25px]">
-      <div className="flex flex-col  max-w-[500px] w-[75%] mx-auto ">
+    <div className="mt-10 md:ml-[25px] xl:ml-[25px] 2xl:ml-[25px]">
+      <div className="flex flex-col  max-w-[500px] w-[90%] md:w-[75%] xl:w-[75%] 2xl:w-[75%] mx-auto ">
         <section className="border-[#d9d9d9] border-[1px] border-solid px-5 fz-13">
           <div className="flex borderb py-3 border-[#d9d9d9] border-b-[1px] border-solid">
             <h2 className="pr-5 text-[#797979] w-[80px] ">Name</h2>

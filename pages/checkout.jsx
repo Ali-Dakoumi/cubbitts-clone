@@ -1,23 +1,28 @@
 import Image from "next/image";
-import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
-import Confirmation from "../components/Checkout/Confirmation";
-import Delivery from "../components/Checkout/Delivery";
+import { useContext, useEffect, useState, Suspense } from "react";
 import CheckoutNav from "../components/Navigation/CheckoutNav";
-import Form from "../components/Checkout/Form";
 import { CartContext } from "./_app";
 import { TbChevronRight } from "react-icons/tb";
-const checkout = () => {
-  const [user, setUser] = useState({
-    first: "",
-    last: "",
-    company: "",
-    appartment: "",
-    city: "",
-    postcode: "",
-    phone: "",
-    method: "",
-  });
+import dynamic from "next/dynamic";
+
+const Form = dynamic(() => import("../components/Checkout/Form"), {
+  suspense: true,
+});
+const Delivery = dynamic(() => import("../components/Checkout/Delivery"), {
+  suspense: true,
+});
+const Confirmation = dynamic(
+  () => import("../components/Checkout/Confirmation"),
+  {
+    suspense: true,
+  }
+);
+const Done = dynamic(() => import("../components/Checkout/Done"), {
+  suspense: true,
+});
+
+const checkout = ({ countries }) => {
+  const [user, setUser] = useState({});
   const cartItems = useContext(CartContext);
   const { items, setItems } = cartItems;
   const [sum, setSum] = useState(0);
@@ -36,28 +41,28 @@ const checkout = () => {
     getCart();
   }, []);
   return (
-    <div className="grid grid-cols-2 bg-white min-h-[100vh] gap-5 ">
-      <div className="flex flex-col overflow-hidden">
+    <div className="grid grid-cols-1 bg-white min-h-[100vh] gap-5 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2">
+      <div className="flex flex-col overflow-hidden relative">
         <CheckoutNav />
-        <ul className=" flex py-3 ml-[25px] ">
+        <ul className=" flex py-3 max-w-full ml-[5px] md:ml-[25px] xl:ml-[25px] 2xl:ml-[25px]">
           {array.map((item, i) => {
             return (
               <li>
                 <button
                   onClick={() => setCurrent(i)}
-                  className={`flex items-center fz-13 ${
+                  className={`flex items-center fz-13 text-xs ${
                     current < i ? "pointer-events-none" : ""
                   }`}
                 >
                   <span
-                    className={`px-1 ${
+                    className={`px-1  text-xs${
                       i === current ? "text-[#333333] " : "text-[#8f8f8f] "
                     }`}
                   >
                     {item}
                   </span>
                   <span
-                    className={`px-1 ${
+                    className={`text-xs ${
                       i === current ? "text-[#333333] " : "text-[#8f8f8f] "
                     }`}
                   >
@@ -68,35 +73,45 @@ const checkout = () => {
             );
           })}
         </ul>
-        {array[current] === "Information" && (
-          <Form
-            current={current}
-            setCurrent={setCurrent}
-            array={array}
-            user={user}
-            setUser={setUser}
-          />
-        )}
-        {array[current] === "Delivery" && (
-          <Delivery
-            current={current}
-            setCurrent={setCurrent}
-            array={array}
-            user={user}
-            setUser={setUser}
-          />
-        )}
-        {array[current] === "Confirmation" && (
-          <Confirmation
-            current={current}
-            setCurrent={setCurrent}
-            array={array}
-            user={user}
-            setUser={setUser}
-          />
-        )}
+        <Suspense fallback={``}>
+          {array[current] === "Information" && (
+            <Form
+              current={current}
+              setCurrent={setCurrent}
+              array={array}
+              user={user}
+              setUser={setUser}
+              countries={countries}
+            />
+          )}
+        </Suspense>
+        <Suspense fallback={``}>
+          {array[current] === "Delivery" && (
+            <Delivery
+              current={current}
+              setCurrent={setCurrent}
+              array={array}
+              user={user}
+              setUser={setUser}
+            />
+          )}
+        </Suspense>
+        <Suspense fallback={``}>
+          {array[current] === "Confirmation" && (
+            <Confirmation
+              current={current}
+              setCurrent={setCurrent}
+              array={array}
+              user={user}
+              setUser={setUser}
+            />
+          )}
+        </Suspense>
+        <Suspense fallback={``}>
+          {array[current] === "Done!" && <Done />}
+        </Suspense>
       </div>
-      <div className="bg-primary-color px-[25px]  pt-4 ">
+      <div className="bg-primary-color px-[25px] pt-4 hidden md:block xl:block 2xl:block ">
         <div className="borderb pt-2 pb-5 ">
           <p className="max-w-[85%] fz-15">
             If you have ordered prescription frames, you will be asked for your
@@ -174,5 +189,20 @@ const checkout = () => {
     </div>
   );
 };
+
+export async function getServerSideProps({ previewData }) {
+  const res = await fetch("https://restcountries.com/v3.1/all");
+  const data = await res.json();
+  let countries = [];
+  data.map((country) => {
+    return countries.push(country.name.common);
+  });
+  countries.sort();
+  return {
+    props: {
+      countries,
+    }, // will be passed to the page component as props
+  };
+}
 
 export default checkout;

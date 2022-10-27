@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { CartContext, FavContext } from "../pages/_app";
 import logo from "../assets/logo.svg";
 import Mobile from "./Navigation/Mobile";
@@ -12,7 +12,7 @@ const Navigation = () => {
   const { addFavProduct, favourites, setFavourites, removeProduct } = fav;
   const { close, setClose } = fav;
   const cartItems = useContext(CartContext);
-  const { items, setItems, cartClose, setCartClose } = cartItems;
+  const { cartClose, setCartClose } = cartItems;
   console.log(setCartClose);
   const toggleWishlist = () => {
     document.body.classList.toggle("overflow-hidden");

@@ -5,12 +5,16 @@ import { useContext } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Cart = ({ toggleCart }) => {
+  const router = useRouter();
+  console.log(router);
   const cartItems = useContext(CartContext);
   const { items: addedItems, setItems, cartClose, setCartClose } = cartItems;
-  console.log(addedItems[0]);
   const [sum, setSum] = useState(0);
+  console.log(addedItems.length);
+  cartItems.length === 0 ? console.log("/checkout") : console.log("/");
   const saveCartToLS = (items) => {
     localStorage.setItem("ls-cart", JSON.stringify(items));
   };
@@ -20,10 +24,6 @@ const Cart = ({ toggleCart }) => {
     });
     setItems([...temp]);
     localStorage.setItem("ls-cart", JSON.stringify(temp));
-  };
-  const resetCard = () => {
-    setItems([]);
-    saveCartToLS(addedItems);
   };
   const increment = (item) => {
     let temp = addedItems.map((addedItem) =>
@@ -70,7 +70,7 @@ const Cart = ({ toggleCart }) => {
 
   return (
     <div
-      className={`cart-row fixed bg-white top-0 right-0 bottom-0 z-[100] pr-[25px] pl-5 max-w-[500px] w-screen 
+      className={`cart-row fixed bg-white top-0 right-0 bottom-0 z-[100] pr-[25px] pl-8 max-w-[500px] w-screen 
       ${cartClose ? "translate-x-0" : "translate-x-[100%]"}
        transition-transform duration-200`}
     >
@@ -142,14 +142,16 @@ const Cart = ({ toggleCart }) => {
         </div>
       )}
 
-      <div className="absolute bottom-2 left-0 right-0 pt-[15px] pb-4 w-full pl-5 pr-[25px] ">
+      <div className="absolute bottom-2 left-0 right-0 pt-[15px] pb-4 w-full pl-8 pr-[25px] ">
         {addedItems && (
           <div className="flex justify-between pt-2 pb-4 bordert">
             <h1>SubTotal </h1>
             <h2> ${sum === 0 ? "0" : sum} </h2>
           </div>
         )}
-        <Link href={"/checkout"}>
+        <Link
+          href={`${addedItems.length === 0 ? router.pathname : "/checkout"}`}
+        >
           <a
             onClick={toggleCart}
             className="text-white mr-[25px]  py-2 px-4 w-full fz-15 bg-button-dark min-w-[285px] text-left rounded-3xl text-white flex justify-between items-center"

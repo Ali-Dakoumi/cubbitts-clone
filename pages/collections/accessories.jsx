@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { createClient } from "../../prismicio";
 import prismic from "../../prismicio";
 import { FavContext } from "../_app";
-import Product from "../../components/Product";
 import Try from "../../components/Try";
 import Filter from "../../components/Filter";
 import Skeleton from "../../components/Skeleton";
 import FilterSkeleton from "../../components/FilterSkeleton";
+import Product from "../../components/Product";
 
 const accessories = ({ products }) => {
   const fav = useContext(FavContext);

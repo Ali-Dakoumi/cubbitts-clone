@@ -1,36 +1,59 @@
-import emailjs from "emailjs-com";
 import Link from "next/link";
 import React, { useState } from "react";
-
-const Form = ({ current, setCurrent, array, user, setUser }) => {
+import { AiOutlineWarning } from "react-icons/ai";
+const Form = ({ setCurrent, user, setUser, countries }) => {
+  let i = 0;
+  const [warn, setWarn] = useState(null);
   const handleChange = (e) => {
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  const validateForm = () => {
+    i = 0;
+    Object.keys(user).forEach(function (key, index) {
+      user[key] === "" ? i : i++;
+    });
+  };
+
   function handleCurrent(e) {
+    validateForm();
+    console.log("validateForm run ", i);
     e.preventDefault();
-    e.target.reset();
-    setCurrent(1);
-    console.log(current);
+    if (i < 8) {
+      setWarn(true);
+    } else {
+      setWarn(false);
+      e.target.reset();
+      setCurrent(1);
+      console.log("its valid", i);
+    }
   }
   return (
-    <div className="mt-10 ml-[25px]">
+    <div className="mt-10 md:ml-[25px] xl:ml-[25px] 2xl:ml-[25px]">
       <form
         onSubmit={handleCurrent}
-        className="flex flex-col  max-w-[500px] w-[75%] mx-auto "
+        className="flex flex-col  max-w-[500px] w-[90%] mx-auto "
       >
-        <p className="fz3-15 pb-2 text-[#3b3b3b]">
-          {/* Delivery address. You can choose to collect in store at the next step.
-          Please note that we are unable to ship prescription lenses to Spain.{" "} */}
-          Information
-        </p>
+        {warn && (
+          <div className="flex justify-center items-center">
+            <AiOutlineWarning color="red" />
+            <p className="m-2">please fill all the fields </p>
+          </div>
+        )}
         <select
           className="w-full my-2 px-4 py-2 rounded-3xl bg-white border-[1px] border-solid border-black cursor-pointer"
           name="country"
           id="country"
+          onChange={handleChange}
+          // onPointerLeave={validateForm}
         >
-          <option className="rounded-3xl" value="United Kingdom">
-            United Kingdom
+          <option className="rounded-3xl" value="">
+            choose country
           </option>
+          {countries.map((country) => (
+            <option className="rounded-3xl" value={country}>
+              {country}
+            </option>
+          ))}
         </select>
         <input
           className="placeholder:text-[#737373] w-full my-2 px-4 py-2 rounded-3xl bg-white border-[1px] border-solid border-[#d9d9d9]  focus:outline-none focus:border-black hover:border-black"
@@ -39,6 +62,7 @@ const Form = ({ current, setCurrent, array, user, setUser }) => {
           id="first"
           name="first"
           onChange={handleChange}
+          // onPointerLeave={validateForm}
         />
         <input
           className="placeholder:text-[#737373] w-full my-2 px-4 py-2 rounded-3xl bg-white border-[1px] border-solid border-[#d9d9d9]  focus:outline-none   focus:border-black hover:border-black"
@@ -48,14 +72,16 @@ const Form = ({ current, setCurrent, array, user, setUser }) => {
           place-holder
           name="last"
           onChange={handleChange}
+          // onPointerLeave={validateForm}
         />
         <input
           className="placeholder:text-[#737373] w-full my-2 px-4 py-2 rounded-3xl bg-white border-[1px] border-solid border-[#d9d9d9]  focus:outline-none   focus:border-black hover:border-black"
-          placeholder="Company (optional)"
+          placeholder="email"
           type="text"
-          id="company"
-          name="company"
+          id="email"
+          name="email"
           onChange={handleChange}
+          // onPointerLeave={validateForm}
         />
         <input
           className="placeholder:text-[#737373] w-full my-2 px-4 py-2 rounded-3xl bg-white border-[1px] border-solid border-[#d9d9d9]  focus:outline-none  focus:border-black hover:border-black"
@@ -64,6 +90,7 @@ const Form = ({ current, setCurrent, array, user, setUser }) => {
           id="appartment"
           name="appartment"
           onChange={handleChange}
+          // onPointerLeave={validateForm}
         />
         <input
           className="placeholder:text-[#737373] w-full my-2 px-4 py-2 rounded-3xl bg-white border-[1px] border-solid border-[#d9d9d9]  focus:outline-none focus:border-black hover:border-black"
@@ -71,6 +98,8 @@ const Form = ({ current, setCurrent, array, user, setUser }) => {
           type="text"
           id="city"
           name="city"
+          onChange={handleChange}
+          // onPointerLeave={validateForm}
         />
         <input
           className="placeholder:text-[#737373] w-full my-2 px-4 py-2 rounded-3xl bg-white border-[1px] border-solid border-[#d9d9d9]  focus:outline-none focus:border-black hover:border-black"
@@ -79,6 +108,7 @@ const Form = ({ current, setCurrent, array, user, setUser }) => {
           id="postcode"
           name="postcode"
           onChange={handleChange}
+          // onPointerLeave={validateForm}
         />
         <input
           className="placeholder:text-[#737373] w-full my-2 px-4 py-2 rounded-3xl bg-white border-[1px] border-solid border-[#d9d9d9]  focus:outline-none focus:border-black hover:border-black"
@@ -87,8 +117,8 @@ const Form = ({ current, setCurrent, array, user, setUser }) => {
           id="phone"
           name="phone"
           onChange={handleChange}
+          // onPointerLeave={validateForm}
         />
-
         <button
           className="text-left w-full my-2 px-4 py-2 rounded-3xl bg-color-brand hover:bg-button-dark text-white cursor-pointer"
           type="submit"
