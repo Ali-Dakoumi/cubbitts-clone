@@ -31,14 +31,14 @@ const accessories = ({ products }) => {
               low-waste Redux Case, artist-designed cleaning cloths, and clip-on
               sunglasses for your spectacles.
               <br /> <br />
-              <span className="underline"> Glasses cases</span>{" "}
-              <span className="underline">Clip-on sunglasses</span>{" "}
+              <span className="underline"> Glasses cases</span>
+              <span className="underline">Clip-on sunglasses</span>
               <span className="underline">Cleaning cloths</span>
             </p>
           </div>
         </div>
         {loading === null && <FilterSkeleton />}
-        {loading !== null && <Filter />}{" "}
+        {loading !== null && <Filter title={"accessories"} />}
         {
           <div className="">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-x-3 gap-y-7">

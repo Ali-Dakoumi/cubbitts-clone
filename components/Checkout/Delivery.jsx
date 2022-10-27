@@ -31,7 +31,7 @@ const Delivery = ({ current, setCurrent, array, user, setUser }) => {
             </h2>
           </div>
           <div className="flex border-[#d9d9d9] border-b-[1px] border-solid py-3">
-            <h2 className="pr-5 text-[#797979] w-[80px] ">Contact</h2>{" "}
+            <h2 className="pr-5 text-[#797979] w-[80px] ">Contact</h2>
             <h2 className="text-[#333333] ">{user.phone}</h2>
           </div>
           <div className="flex  py-3">

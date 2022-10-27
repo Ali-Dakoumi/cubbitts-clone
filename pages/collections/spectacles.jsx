@@ -41,7 +41,7 @@ const spectacles = ({ products }) => {
           </div>
         </div>
         {loading === null && <FilterSkeleton />}
-        {!loading && <Filter />}
+        {loading && <Filter title={"spectacles"} />}
         {
           <div className="">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-x-3 gap-y-7">
