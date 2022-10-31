@@ -50,24 +50,7 @@ const Confirmation = ({ current, setCurrent, array, user }) => {
   const handleReturn = () => {
     setCurrent(1);
   };
-  if (current === 3) {
-    return (
-      <div className="mt-10 ml-[25px]">
-        <div className="flex flex-col  max-w-[500px] w-[75%] mx-auto ">
-          <section className="border-[#d9d9d9] border-[1px] border-solid px-5 fz-13">
-            <BsFillCheckCircleFill />
-            <p>
-              Your order has been sent now, we will call you as soon as
-              possible!
-            </p>
-            <Link href={"/"}>
-              <a>Go back to home page. </a>
-            </Link>
-          </section>
-        </div>
-      </div>
-    );
-  }
+
   return (
     <div className="mt-10 md:ml-[25px] xl:ml-[25px] 2xl:ml-[25px]">
       <div className="flex flex-col  max-w-[500px] w-[90%] md:w-[75%] xl:w-[75%] 2xl:w-[75%] mx-auto ">

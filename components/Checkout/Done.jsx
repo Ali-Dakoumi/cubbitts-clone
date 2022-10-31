@@ -8,7 +8,7 @@ export default function Done() {
       <p className="text-xs">
         order made with success, return to
         <Link href="/">
-          <a className="text-xs underline ">home</a>
+          <a className="text-xs underline "> home </a>
         </Link>
         page.
       </p>
