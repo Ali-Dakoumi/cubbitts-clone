@@ -25,7 +25,7 @@ const Product = ({ product, addFavProduct, favourites }) => {
         <div className=" ml-[-8px] text-xs">+10</div>
       </div>
       <div className="article overflow-hidden relative ">
-        <div className="absolute top-2 right-2 z-[10] hidden group-hover:block ">
+        <div className="absolute top-2 right-2 z-[50] md:hidden group-hover:block ">
           {favourites?.some((item) => item.id === id) ? (
             <RiHeartFill onClick={() => addFavProduct(product, title)} />
           ) : (
