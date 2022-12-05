@@ -75,7 +75,7 @@ const Mobile = ({ toggleWishlist, logo, favourites, toggleCart }) => {
               </div>
             </a>
           </Link>
-          <Link href={"/wishlist"}>
+          {/* <Link href={"/wishlist"}>
             <a
               onClick={toggleMenu}
               className=" py-3 text-color-brand relative "
@@ -84,7 +84,7 @@ const Mobile = ({ toggleWishlist, logo, favourites, toggleCart }) => {
                 <span>Wishlist</span>
               </div>
             </a>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className="justify-self-center col-start-1 row-start-1">

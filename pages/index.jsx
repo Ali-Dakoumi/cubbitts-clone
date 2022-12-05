@@ -21,10 +21,10 @@ const Home = ({ document, products }) => {
       </Head>
       <main className="px-[25px]  ">
         <section className=" w-full grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 py-5 borderb">
-          <div className="w-full h-[70vw] sm:h-[85vh] md:h-[85vh] lg:h-[85vh] xl:h-[85vh] 2xl:h-[85vh] md:border-0 xl:border-0 2xl:border-0 col-span-1 relative overflow-hidden ">
+          <div className="w-full h-[100vw] sm:h-[85vh] md:h-[85vh] lg:h-[85vh] xl:h-[85vh] 2xl:h-[85vh] md:border-0 xl:border-0 2xl:border-0 col-span-1 relative overflow-hidden ">
             <Image
               src={items[0][0].imagetwo.url}
-              className=" scale-img"
+              className=" scale-img absolute"
               alt=""
               layout="fill"
               objectFit="cover"
@@ -33,7 +33,7 @@ const Home = ({ document, products }) => {
           </div>
           <div>
             <div className="grid grid-cols-1 gap-3 bordert pt-3 md:border-0 xl:border-0 2xl:border-0 md:pt-0 xl:pt-0 2xl:pt-0">
-              <div className="h-[70vw] sm:h-[60vh] md:h-[60vh] lg:h-[60vh] xl:h-[60vh] 2xl:h-[60vh] w-full relative overflow-hidden ">
+              <div className="h-[100vw] sm:h-[60vh] md:h-[60vh] lg:h-[60vh] xl:h-[60vh] 2xl:h-[60vh] w-full relative overflow-hidden ">
                 <Image
                   className=" scale-img"
                   src={items[0][0].imageone.url}
