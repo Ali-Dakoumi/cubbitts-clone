@@ -18,7 +18,7 @@ const Mobile = ({ toggleWishlist, logo, favourites, toggleCart }) => {
     setClose(!close);
   };
   return (
-    <div className="md:hidden lg:hidden xl:hidden 2xl:hidden grid items-center ">
+    <div className="md:hidden grid items-center ">
       <div className="justify-self-start col-start-1 row-start-1 z-20">
         <button
           onClick={toggleMenu}

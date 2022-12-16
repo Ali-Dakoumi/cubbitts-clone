@@ -10,7 +10,6 @@ export const CartContext = createContext(null);
 import { useRouter } from "next/router";
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  console.log(router);
   const [favourites, setFavourites] = useState([]);
   const [items, setItems] = useState([]);
   const [cartClose, setCartClose] = useState(false);
@@ -32,7 +31,6 @@ export default function App({ Component, pageProps }) {
     } else {
       newFavouriteList.push(product);
     }
-    console.log(newFavouriteList);
     setFavourites(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
     setFavState(!favState);

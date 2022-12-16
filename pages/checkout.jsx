@@ -41,10 +41,10 @@ const checkout = ({ countries }) => {
     getCart();
   }, []);
   return (
-    <div className="grid grid-cols-1 bg-white min-h-[100vh] gap-5 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2">
+    <div className="grid grid-cols-1 bg-white min-h-[100vh] gap-5 md:grid-cols-2">
       <div className="flex flex-col overflow-hidden relative">
         <CheckoutNav />
-        <ul className=" flex py-3 max-w-full ml-[5px] md:ml-[25px] xl:ml-[25px] 2xl:ml-[25px]">
+        <ul className=" flex py-3 max-w-full ml-[5px] md:ml-[25px]">
           {array.map((item, i) => {
             return (
               <li>
@@ -111,7 +111,7 @@ const checkout = ({ countries }) => {
           {array[current] === "Done!" && <Done />}
         </Suspense>
       </div>
-      <div className="bg-primary-color px-[25px] pt-4 hidden md:block xl:block 2xl:block ">
+      <div className="bg-primary-color px-[25px] pt-4 hidden md:block ">
         <div className="borderb pt-2 pb-5 ">
           <p className="max-w-[85%] fz-15">
             If you have ordered prescription frames, you will be asked for your

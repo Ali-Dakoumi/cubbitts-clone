@@ -41,7 +41,7 @@ const eyeexam = ({ document }) => {
             md:m-0 lg:m-0 xl:m-0 2xl:m-0 
             "
             >
-              <p className="fz-15  ">Eye exams</p>
+              <p className="fz-15">Eye exams</p>
             </div>
             <div className="self-center sticky top-16 col-start-1 row-start-1 grid">
               <h2
@@ -57,22 +57,19 @@ const eyeexam = ({ document }) => {
               </h2>
             </div>
           </div>
-          <div
-            className="relative col-start-1 row-start-1 aspect-[1/1.2] overflow-hidden
-          md:col-start-2 md:row-start-1 lg:col-start-2 lg:row-start-1 xl:col-start-2 xl:row-start-1 2xl:col-start-2 2xl:row-start-1"
-          >
+          <div className="relative col-start-1 row-start-1 aspect-[1/1.2] overflow-hidden md:col-start-2 md:row-start-1">
             <Image src={firstimage} layout="fill" objectFit="cover" />
           </div>
           <div
-            className="col-start-1 row-start-3  grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-y-3
-          md:col-start-2  md:row-start-2  lg:col-start-2  lg:row-start-2  xl:col-start-2  xl:row-start-2  2xl:col-start-2  2xl:row-start-2:
+            className="col-start-1 row-start-3  grid grid-cols-1 md:grid-cols-2 gap-y-3
+          md:col-start-2  md:row-start-2  
           "
           >
             <div className="pb-5  ">
               <h2 className="py-3 borderb mb-5">Services</h2>
               <Link href={"/"}>
                 <a>
-                  <div className="md:mr-[20px] lg:mr-[20px] xl:mr-[20px] 2xl:mr-[20px] flex justify-between items-center my-2 px-4 py-1 rounded-2xl bg-button-light ">
+                  <div className="md:mr-[20px] flex justify-between items-center my-2 px-4 py-1 rounded-2xl bg-button-light ">
                     <p>Book an eye exam</p>
                     <HiArrowNarrowRight />
                   </div>
@@ -100,8 +97,8 @@ const eyeexam = ({ document }) => {
                 <span>info@cubitts.com</span>
               </div>
             </div>
-            <div className=" md:col-span-2 lg:col-span-2 xl:col-span-2 2xl:col-span-2 pb-[20px] py-5 mt-[20px] borderb bordert">
-              <p className=" fz-15 md:fz-23 lg:fz-23 xl:fz-23 2xl:fz-23 ">
+            <div className=" md:col-span-2 pb-[20px] py-5 mt-[20px] borderb bordert">
+              <p className=" fz-15 md:fz-23">
                 Eye exams vary, depending on where you go. Our eye exams are
                 about much more than just checking your prescription.
                 <br />
@@ -117,7 +114,7 @@ const eyeexam = ({ document }) => {
             </div>
           </div>
         </section>
-        <section className="px-[25px] py-5  grid gap-x-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 fz-15 ">
+        <section className="px-[25px] py-5  grid gap-x-3 grid-cols-1 md:grid-cols-2 fz-15 ">
           <div className="col-start-2">
             <div
               onClick={(e) => show(e)}
@@ -183,11 +180,10 @@ const eyeexam = ({ document }) => {
           </div>
         </section>
         <section>
-          <div class="px-[25px] py-5 grid gap-x-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 fz-15  ">
+          <div class="px-[25px] py-5 grid gap-x-3 grid-cols-1 md:grid-cols-2 fz-15  ">
             <div
               class="mb-[20px] fz-15 md:fz-23 lg:fz-23 xl:fz-23 2xl:fz-23 md:max-w-[60%] 
-            lg:max-w-[60%] xl:max-w-[60%] 2xl:max-w-[60%]
-            md:col-start-2 lg:col-start-2 xl:col-start-2 2xl:col-start-2
+            md:col-start-2
             "
             >
               <br />
@@ -195,7 +191,7 @@ const eyeexam = ({ document }) => {
             </div>
           </div>
         </section>
-        <section className="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 py-5 mx-[25px] borderb">
+        <section className="grid gap-3 grid-cols-1 md:grid-cols-2 py-5 mx-[25px] borderb">
           <div className="relative">
             <Image src={secondimage} layout="fill" objectFit="cover" />
           </div>
@@ -204,8 +200,8 @@ const eyeexam = ({ document }) => {
           </div>
         </section>
         <section
-          className="mx-[25px] mb-[25px]  h-40 md:h-70 lg:h-80 xl:h-80 2xl:h-80 py-5  fz-35 md:fz-80 xl:fz-80 2xl:fz-80 
-        xl:max-w-[75%] 2xl:maw-w-[75%]
+          className="mx-[25px] mb-[25px]  h-40 md:h-70 lg:h-80 py-5  fz-35 md:fz-80
+        xl:max-w-[75%]
         "
         >
           <div className="">

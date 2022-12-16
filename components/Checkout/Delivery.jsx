@@ -5,7 +5,6 @@ const Delivery = ({ current, setCurrent, array, user, setUser }) => {
   const [warn, setWarn] = useState(null);
   const handleMethod = (e) => {
     setMethod(e.target.dataset.method);
-    console.log(method, "method");
   };
   const handleReturn = () => {
     setCurrent(0);
@@ -20,8 +19,8 @@ const Delivery = ({ current, setCurrent, array, user, setUser }) => {
     setUser((prev) => ({ ...prev, method: method }));
   }
   return (
-    <div className="mt-10 md:ml-[25px] xl:ml-[25px] 2xl:ml-[25px]">
-      <div className="flex flex-col  max-w-[500px] w-[90%] md:w-[75%] xl:w-[75%] 2xl:w-[75%]  mx-auto ">
+    <div className="mt-10 md:ml-[25px]">
+      <div className="flex flex-col  max-w-[500px] w-[90%] md:w-[75%] mx-auto ">
         <p className="fz3-15 pb-2 text-[#3b3b3b]">Delivery </p>
         <section className="border-[#d9d9d9] border-[1px] border-solid px-5 fz-13">
           <div className="flex borderb py-3 border-[#d9d9d9] border-b-[1px] border-solid">
@@ -48,7 +47,7 @@ const Delivery = ({ current, setCurrent, array, user, setUser }) => {
             <p className="m-2">please choose delivery method </p>
           </div>
         )}
-        <section className=" border-[#d9d9d9] border-[1px] border-solid px-5 fz-13 px-5">
+        <section className=" border-[#d9d9d9] border-[1px] border-solid fz-13 px-5">
           <div className="method-grid justify-between py-5 borderb">
             <div
               className={`

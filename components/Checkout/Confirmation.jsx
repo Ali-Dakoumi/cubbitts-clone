@@ -31,18 +31,8 @@ const Confirmation = ({ current, setCurrent, array, user }) => {
     total: "total: $" + items.reduce((total, item) => item.total + total, 0),
   };
 
-  console.log(orderData);
   function sendOrder() {
-    emailjs
-      .send("gmail", "template_2y5honm", orderData, "8EIev0hyFjLKOnq7T")
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.send("gmail", "template_2y5honm", orderData, "8EIev0hyFjLKOnq7T");
     setCurrent(3);
     setItems([]);
     localStorage.setItem("ls-cart", JSON.stringify([]));
@@ -52,8 +42,8 @@ const Confirmation = ({ current, setCurrent, array, user }) => {
   };
 
   return (
-    <div className="mt-10 md:ml-[25px] xl:ml-[25px] 2xl:ml-[25px]">
-      <div className="flex flex-col  max-w-[500px] w-[90%] md:w-[75%] xl:w-[75%] 2xl:w-[75%] mx-auto ">
+    <div className="mt-10 md:ml-[25px]">
+      <div className="flex flex-col  max-w-[500px] w-[90%] md:w-[75%] mx-auto ">
         <section className="border-[#d9d9d9] border-[1px] border-solid px-5 fz-13">
           <div className="flex borderb py-3 border-[#d9d9d9] border-b-[1px] border-solid">
             <h2 className="pr-5 text-[#797979] w-[80px] ">Name</h2>

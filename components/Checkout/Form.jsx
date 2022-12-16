@@ -37,7 +37,6 @@ const Form = ({ setCurrent, user, setUser, countries }) => {
     onSubmit: (values) => {
       setUser(values);
       setCurrent(1);
-      console.log(values);
     },
   });
 

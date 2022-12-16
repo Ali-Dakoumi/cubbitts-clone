@@ -20,8 +20,8 @@ const Home = ({ document, products }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="px-[25px]  ">
-        <section className=" w-full grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 py-5 borderb">
-          <div className="w-full h-[100vw] sm:h-[85vh] md:h-[85vh] lg:h-[85vh] xl:h-[85vh] 2xl:h-[85vh] md:border-0 xl:border-0 2xl:border-0 col-span-1 relative overflow-hidden ">
+        <section className=" w-full grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 py-5 borderb">
+          <div className="w-full h-[100vw] sm:h-[85vh] md:h-[85vh] md:border-0 col-span-1 relative overflow-hidden ">
             <Image
               src={items[0][0].imagetwo.url}
               className=" scale-img absolute"
@@ -32,8 +32,8 @@ const Home = ({ document, products }) => {
             />
           </div>
           <div>
-            <div className="grid grid-cols-1 gap-3 bordert pt-3 md:border-0 xl:border-0 2xl:border-0 md:pt-0 xl:pt-0 2xl:pt-0">
-              <div className="h-[100vw] sm:h-[60vh] md:h-[60vh] lg:h-[60vh] xl:h-[60vh] 2xl:h-[60vh] w-full relative overflow-hidden ">
+            <div className="grid grid-cols-1 gap-3 bordert pt-3 md:border-0 md:pt-0">
+              <div className="h-[100vw] sm:h-[60vh] md:h-[60vh] w-full relative overflow-hidden ">
                 <Image
                   className=" scale-img"
                   src={items[0][0].imageone.url}
@@ -43,7 +43,7 @@ const Home = ({ document, products }) => {
                   priority
                 />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-3 text-color-brand">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-color-brand">
                 <p>{items[0][0].description}</p>
                 <h1 className="text-2xl leading-[30px] text-center md:text-left xl:text-left 2xl:text-left">
                   {items[0][0].title}
@@ -52,7 +52,7 @@ const Home = ({ document, products }) => {
             </div>
           </div>
         </section>
-        <section className="grid gap-x-3 gap-y-7 grid-cols-1 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 py-5 borderb ">
+        <section className="grid gap-x-3 gap-y-7 grid-cols-1 md:grid-cols-3 py-5 borderb ">
           <div className="col-span-1 row-span-2 ">
             <div className="sticky top-16">
               <h1 className="fz-15 md:fz-30 xl:fz-38 2xl:fz-38  ">
@@ -68,7 +68,7 @@ const Home = ({ document, products }) => {
               </Link>
             </div>
           </div>
-          <div className="md:grid-span2 xl:grid-span2 2xl:grid-span2">
+          <div className="md:grid-span2">
             <div className="grid grid-cols-2 gap-x-3 gap-y-7">
               {products?.map((product, i) => (
                 <Product
@@ -81,11 +81,11 @@ const Home = ({ document, products }) => {
             </div>
           </div>
         </section>
-        <section className="h-40 md:h-70 lg:h-80 xl:h-80 2xl:h-80 py-5 borderb fz-35 md:fz-80 xl:fz-80 2xl:fz-80">
+        <section className="h-40 md:h-70 lg:h-80 xl:h-80 2xl:h-80 py-5 borderb fz-35 md:fz-80">
           <h2>{items[3][0].heading}</h2>
         </section>
-        <section className=" w-full grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 grid py-5 borderb">
-          <div className="w-full h-[95vh] md:border-0 xl:border-0 2xl:border-0 col-span-1 relative overflow-hidden ">
+        <section className=" w-full grid gap-3 grid-cols-1 md:grid-cols-2 py-5 borderb">
+          <div className="w-full h-[95vh] md:border-0 col-span-1 relative overflow-hidden ">
             <Image
               src={items[4][0].imageone.url}
               className=" scale-img"
@@ -95,7 +95,7 @@ const Home = ({ document, products }) => {
             />
           </div>
           <div>
-            <div className="grid grid-cols-1 gap-3 bordert pt-3 md:border-0 xl:border-0 2xl:border-0 md:pt-0 xl:pt-0 2xl:pt-0">
+            <div className="grid grid-cols-1 gap-3 bordert pt-3 md:border-0 md:pt-0">
               <div className="h-[75vh] w-full relative overflow-hidden ">
                 <Image
                   src={items[4][0].imagetwo.url}
@@ -105,7 +105,7 @@ const Home = ({ document, products }) => {
                   objectFit="cover"
                 />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-3 text-color-brand">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-color-brand">
                 <p>{items[4][0].description}</p>
                 <h1 className="text-2xl leading-[30px] text-center md:text-left xl:text-left 2xl:text-left">
                   {items[4][0].title}
@@ -114,7 +114,7 @@ const Home = ({ document, products }) => {
             </div>
           </div>
         </section>
-        <section className="py-5 grid gap-3 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
+        <section className="py-5 grid gap-3 grid-cols-1 md:grid-cols-3">
           <div className="">
             <div className="aspect-square relative">
               <Image
@@ -125,7 +125,7 @@ const Home = ({ document, products }) => {
                 objectFit="cover"
               />
             </div>
-            <div className="grid grid-cols-2 pt-3 md:fz-13 lg:fz-15 xl:fz-15 2xl:fz-15">
+            <div className="grid grid-cols-2 pt-3 md:fz-13 lg:fz-15">
               <p className="text-xs ">{items[5][0].description}</p>{" "}
               <h1 className="text-xs ">{items[5][0].title}</h1>
             </div>
@@ -140,7 +140,7 @@ const Home = ({ document, products }) => {
                 className=" scale-img"
               />
             </div>
-            <div className="grid grid-cols-2 pt-3 md:fz-13 lg:fz-15 xl:fz-15 2xl:fz-15">
+            <div className="grid grid-cols-2 pt-3 md:fz-13 lg:fz-15">
               <p className="text-xs ">{items[5][1].description}</p>{" "}
               <h1 className="text-xs ">{items[5][1].title}</h1>
             </div>
@@ -155,7 +155,7 @@ const Home = ({ document, products }) => {
                 className=" scale-img"
               />
             </div>
-            <div className="grid grid-cols-2 pt-3 md:fz-13 lg:fz-15 xl:fz-15 2xl:fz-15">
+            <div className="grid grid-cols-2 pt-3 md:fz-13 lg:fz-15">
               <p className="text-xs ">{items[5][2].description}</p>{" "}
               <h1 className="text-xs ">{items[5][2].title}</h1>
             </div>

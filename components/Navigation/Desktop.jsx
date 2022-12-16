@@ -12,7 +12,7 @@ const Desktop = ({ toggleWishlist, logo, toggleCart }) => {
   const wishlistLength = "Wishlist (" + favourites.length + ")";
 
   return (
-    <div className="hidden md:hidden lg:hidden xl:grid 2xl:grid">
+    <div className="hidden xl:grid">
       <div className="justify-self-start col-start-1 row-start-1">
         <Link href={"/"}>
           <a href="">

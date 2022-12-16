@@ -9,12 +9,9 @@ import { useRouter } from "next/router";
 
 const Cart = ({ toggleCart }) => {
   const router = useRouter();
-  console.log(router);
   const cartItems = useContext(CartContext);
   const { items: addedItems, setItems, cartClose, setCartClose } = cartItems;
   const [sum, setSum] = useState(0);
-  console.log(addedItems.length);
-  cartItems.length === 0 ? console.log("/checkout") : console.log("/");
   const saveCartToLS = (items) => {
     localStorage.setItem("ls-cart", JSON.stringify(items));
   };
@@ -36,7 +33,6 @@ const Cart = ({ toggleCart }) => {
         : addedItem
     );
     setItems([...temp]);
-    console.log(item.total);
     saveCartToLS(temp);
   };
   const decrement = (item) => {
@@ -51,7 +47,6 @@ const Cart = ({ toggleCart }) => {
         : addedItem
     );
     setItems([...temp]);
-    console.log(item.total);
     saveCartToLS(temp);
   };
   const getCart = () => {

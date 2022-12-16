@@ -13,7 +13,6 @@ const Navigation = () => {
   const { close, setClose } = fav;
   const cartItems = useContext(CartContext);
   const { cartClose, setCartClose } = cartItems;
-  console.log(setCartClose);
   const toggleWishlist = () => {
     document.body.classList.toggle("overflow-hidden");
     setClose(!close);

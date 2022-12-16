@@ -59,7 +59,7 @@ const Product = ({ product, addFavProduct, favourites }) => {
       </div>
       <div className="mt-[6px] grid grid-cols-2">
         <h2 className="text-xs">{title}</h2>
-        <h2 className="text-xs justify-self-end sm:justify-self-start lg:justify-self-start md:justify-self-start xl:justify-self-start 2xl:justify-self-start ">
+        <h2 className="text-xs justify-self-end sm:justify-self-start lg:justify-self-start md:justify-self-start">
           ${price}
         </h2>
       </div>

@@ -9,7 +9,7 @@ const Tablet = ({ logo, toggleWishlist, favourites, toggleCart }) => {
   const cartItems = useContext(CartContext);
   const { items } = cartItems;
   return (
-    <div className="hidden md:grid lg:grid xl:hidden 2xl:hidden  ">
+    <div className="hidden md:grid xl:hidden">
       <div className="justify-self-start col-start-1 row-start-1">
         <Link href={"/"}>
           <a href="">

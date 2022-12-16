@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-footer-color px-[25px] py-[30px] text-color-brand">
-      <div className="grid gap-x-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4">
+      <div className="grid gap-x-7 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         <div className="xl:col-start-2 2xl:col-start-2">
           <p className="">
             In an elegantly-designed yet upbeat and lively London Cubitts’ room,
@@ -77,7 +77,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="pt-3 pb-3 md:pt-0 lg:pt-0 xl:pt-0 2xl:pt-0">
+        <div className="pt-3 pb-3 md:pt-0">
           <p>Currency</p>
           <select
             className="w-full my-4 px-4 py-2 rounded-2xl bg-button-light border-[1px] border-solid border-button-light hover:border-black cursor-pointer "

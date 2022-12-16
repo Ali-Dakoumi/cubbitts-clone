@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const Try = () => {
   return (
-    <section className="px-[25px] mt-10 h-40 md:h-70 lg:h-80 xl:h-80 2xl:h-80 py-5 fz-35 md:fz-80 xl:fz-80 2xl:fz-80 bordert ">
+    <section className="px-[25px] mt-10 h-40 md:h-70 lg:h-8 py-5 fz-35 md:fz-8 bordert ">
       <div className="  flex flex-col">
-        <h2 className="fz-35 md:fz-60 lg:fz-60 xl:fz-80 2xl:fz-80">
+        <h2 className="fz-35 md:fz-60 xl:fz-80">
           Curiosity is gluttony.
           <br /> To see is to devour.
         </h2>
